@@ -16,21 +16,25 @@ public class Cau3 {
         StringBuilder NewStr = new StringBuilder();
         for(int i = 0; i < lst.length; i++)
         {
-            for(int j = 0; j < lst[i].length(); j++)
+            if(lst[i] != "")
             {
-                if(j == 0)
+                for(int j = 0; j < lst[i].length(); j++)
                 {
-                    NewStr.append(Character.toUpperCase(lst[i].charAt(j)));
+                    if(j == 0)
+                    {
+                        NewStr.append(Character.toUpperCase(lst[i].charAt(j)));
+                    }
+                    else
+                    {
+                        NewStr.append(Character.toLowerCase(lst[i].charAt(j)));
+                    }
                 }
-                else
+                if(i != lst.length - 1)
                 {
-                    NewStr.append(Character.toLowerCase(lst[i].charAt(j)));
+                    NewStr.append(" ");
                 }
             }
-            if(i != lst.length - 1)
-            {
-                NewStr.append(" ");
-            }
+
         }
 
         return NewStr.toString();
